@@ -72,16 +72,8 @@ Untracked files:
 
 	git-basics.aux
 	git-basics.log
-	git-basics.nav
-	git-basics.out
-	git-basics.pdf
-	git-basics.snm
-	git-basics.synctex.gz
-	git-basics.tex
-	git-basics.toc
-	git-basics.vrb
-
-nothing added to commit but untracked files present (use "git add" to track)
+	...
+	...
 	\end{verbatim}
 \end{frame}
 
@@ -92,6 +84,248 @@ nothing added to commit but untracked files present (use "git add" to track)
 	\scriptsize
 	\begin{verbatim}
 $ git add git-basics.tex git-basics.pdf
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   git-basics.pdf
+	new file:   git-basics.tex
+
+Untracked files:
+
+	git-basics.aux
+	git-basics.log
+	...
+	...
+	\end{verbatim}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{git commit}
+	\scriptsize
+	\begin{verbatim}
+$ git commit -m "add git-status / git-add slides"
+[master (root-commit) d2ab120] add git-status / git-add slides
+ 2 files changed, 98 insertions(+)
+ create mode 100644 git-basics.pdf
+ create mode 100644 git-basics.tex
+	\end{verbatim}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{git pull}
+	\scriptsize
+	\begin{verbatim}
+$ git pull cjwfuller master
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From github.com:cjwfuller/git-basics
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> cjwfuller/master
+Merge made by the 'recursive' strategy.
+ LICENSE   | 22 ++++++++++++++++++++++
+ README.md |  1 +
+ 2 files changed, 23 insertions(+)
+ create mode 100644 LICENSE
+ create mode 100644 README.md
+	\end{verbatim}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{git push}
+	\scriptsize
+	\begin{verbatim}
+$ git push cjwfuller master
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 80.63 KiB | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To git@github.com:cjwfuller/git-basics.git
+   46f9a51..4b14b4b  master -> master
+	\end{verbatim}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{git log}
+	\scriptsize
+	\begin{verbatim}
+$ git log
+commit 4b14b4bcebeb6a8532d880b190e0d399edf62e99
+Merge: d2ab120 46f9a51
+Author: Chris Fuller <chris@cjwfuller.com>
+Date:   Sat Mar 7 12:55:00 2015 +0000
+
+    Merge branch 'master' of github.com:cjwfuller/git-basics
+
+commit 46f9a51f1f847c84d5570832208ac269cb22bdce
+Author: cjwfuller <chris@cjwfuller.com>
+Date:   Sat Mar 7 12:54:14 2015 +0000
+
+    Initial commit
+
+commit d2ab120b641731a9cf288dd3a2449c27c4499300
+Author: Chris Fuller <chris@cjwfuller.com>
+Date:   Sat Mar 7 12:51:24 2015 +0000
+
+    add git-status / git-add slides
+	\end{verbatim}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{git show}
+	\tiny
+	\begin{verbatim}
+$ git show d2ab120b641731a9cf288dd3a2449c27c4499300
+commit d2ab120b641731a9cf288dd3a2449c27c4499300
+Author: Chris Fuller <chris@cjwfuller.com>
+Date:   Sat Mar 7 12:51:24 2015 +0000
+
+    add git-status / git-add slides
+
+diff --git a/git-basics.pdf b/git-basics.pdf
+new file mode 100644
+index 0000000..e786890
+Binary files /dev/null and b/git-basics.pdf differ
+diff --git a/git-basics.tex b/git-basics.tex
+new file mode 100644
+index 0000000..d0102ae
+--- /dev/null
++++ b/git-basics.tex
+@@ -0,0 +1,98 @@
++\documentclass{beamer}
++
++\mode<presentation> {
++
++\usetheme{default}
++
++%\usecolortheme{orchid}
++
++}
++
++\usepackage{graphicx} % Allows including images
+...
+...
+	\end{verbatim}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{git diff}
+	\tiny
+	\begin{verbatim}
+$ git diff git-basics.tex
+...
+...
++On branch master
++Changes to be committed:
++
++       modified:   git-basics.tex
++
++Changes not staged for commit:
++
++       modified:   git-basics.pdf
++
++Untracked files:
+...
+...
+	\end{verbatim}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{git checkout}
+	\tiny
+	\begin{verbatim}
+$ git status
+On branch master
+Changes not staged for commit:
+
+	modified:   git-basics.pdf
+	modified:   git-basics.tex
+
+Untracked files:
+
+	git-basics.aux
+	git-basics.log
+	...
+	...
+
+bash-3.2$ git checkout git-basics.pdf
+bash-3.2$ git status
+On branch master
+Changes not staged for commit:
+
+	modified:   git-basics.tex
+
+Untracked files:
+
+	git-basics.aux
+	git-basics.log
+	...
+	...
+
+	\end{verbatim}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{git reset}
+	\tiny
+	\begin{verbatim}
+$ git status
+On branch master
+Changes not staged for commit:
+
+	modified:   git-basics.pdf
+	modified:   git-basics.tex
+
+Untracked files:
+
+	git-basics.aux
+	git-basics.log
+	...
+
+$ git add git-basics.tex
+$ git status
+On branch master
+Changes to be committed:
+
+	modified:   git-basics.tex
+
+Changes not staged for commit:
+
+	modified:   git-basics.pdf
+
+Untracked files:
+
+	git-basics.aux
+	git-basics.log
+	...
+
+$ git reset git-basics.tex
+Unstaged changes after reset:
+M	git-basics.pdf
+M	git-basics.tex
 	\end{verbatim}
 \end{frame}
 
