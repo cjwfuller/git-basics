@@ -1,0 +1,98 @@
+\documentclass{beamer}
+
+\mode<presentation> {
+
+\usetheme{default}
+
+%\usecolortheme{orchid}
+
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Git]{Git \& GitHub - The Basics} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+ \\ % Your institution for the title page
+\medskip
+\textit{chris@cjwfuller.com}
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%------------------------------------------------
+\section{Introduction}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Git - "the stupid content tracker"}
+\textit{``Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals."} - \url{github.com/git/git}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Git Repositories}
+\begin{itemize}
+	\item Repositories can be
+	\begin{itemize}
+		\item Created or forked
+		\item Owned by an individual or an organisation
+		\item Private or public
+		\item Hosted remotely (e.g. on GitHub) and/or locally (e.g. on a laptop)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{git status}
+	\scriptsize
+	\begin{verbatim}
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	git-basics.aux
+	git-basics.log
+	git-basics.nav
+	git-basics.out
+	git-basics.pdf
+	git-basics.snm
+	git-basics.synctex.gz
+	git-basics.tex
+	git-basics.toc
+	git-basics.vrb
+
+nothing added to commit but untracked files present (use "git add" to track)
+	\end{verbatim}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{git add}
+	\scriptsize
+	\begin{verbatim}
+$ git add git-basics.tex git-basics.pdf
+	\end{verbatim}
+\end{frame}
+
+\end{document} 
