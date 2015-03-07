@@ -45,7 +45,7 @@
 
 \begin{frame}
 \frametitle{git status}
-
+Displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git
 \end{frame}
 
 %------------------------------------------------
@@ -74,7 +74,7 @@ Untracked files:
 
 \begin{frame}
 \frametitle{git add}
-
+Updates the index using the current content found in the working tree, to prepare the content staged for the next commit
 \end{frame}
 
 %------------------------------------------------
@@ -108,7 +108,7 @@ Untracked files:
 
 \begin{frame}
 \frametitle{git commit}
-
+Stores the current contents of the index in a new commit along with a log message from the user describing the changes
 \end{frame}
 
 %------------------------------------------------
@@ -129,7 +129,7 @@ $ git commit -m "add git-status / git-add slides"
 
 \begin{frame}
 \frametitle{git pull}
-
+Incorporates changes from a remote repository into the current branch. In its default mode, git pull is shorthand for git fetch followed by git merge
 \end{frame}
 
 %------------------------------------------------
@@ -159,7 +159,7 @@ Merge made by the 'recursive' strategy.
 
 \begin{frame}
 \frametitle{git push}
-
+Updates remote refs using local refs, while sending objects necessary to complete the given refs
 \end{frame}
 
 %------------------------------------------------
@@ -183,7 +183,7 @@ To git@github.com:cjwfuller/git-basics.git
 
 \begin{frame}
 \frametitle{git log}
-
+Shows the commit logs
 \end{frame}
 
 %------------------------------------------------
@@ -219,7 +219,7 @@ Date:   Sat Mar 7 12:51:24 2015 +0000
 
 \begin{frame}
 \frametitle{git show}
-
+Shows one or more objects (e.g. commits)
 \end{frame}
 
 %------------------------------------------------
@@ -266,7 +266,7 @@ index 0000000..d0102ae
 
 \begin{frame}
 \frametitle{git diff}
-
+Show changes between the things (e.g. two trees)
 \end{frame}
 
 %------------------------------------------------
@@ -298,7 +298,7 @@ $ git diff git-basics.tex
 
 \begin{frame}
 \frametitle{git checkout}
-
+Update HEAD to set the specified branch as the current branch
 \end{frame}
 
 %------------------------------------------------
@@ -342,7 +342,7 @@ Untracked files:
 
 \begin{frame}
 \frametitle{git reset}
-
+Reset current HEAD to the specified state
 \end{frame}
 
 %------------------------------------------------
